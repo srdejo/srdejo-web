@@ -1,0 +1,169 @@
+<div class="page">
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="#top" class="logo" aria-label="SRDEJO - Inicio">
+      <img ngSrc="assets/white-logo.png" width="52" height="52" alt="SRDEJO" class="logo-img" />
+    </a>
+    <nav class="nav-links">
+      <a href="#soluciones">Soluciones</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#precios">Precios</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#contacto" class="nav-cta">Hablemos</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <span class="eyebrow">Software a medida, impulsado por IA</span>
+      <h1>Llevamos el software que tu negocio necesita, sin pagar el precio de uno grande.</h1>
+      <p class="lead">
+        Diseñamos y construimos herramientas a la medida para pequeños negocios &mdash; hoteles, joyerías, tiendas,
+        distribuidoras &mdash; usando IA para desarrollar más rápido y a un costo que sí puedes pagar.
+      </p>
+      <div class="cta-row">
+        <a href="#contacto" class="btn btn-primary">Agendar una llamada</a>
+        <a [href]="whatsappUrl" target="_blank" rel="noopener" class="btn btn-secondary">Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-art-inner">
+        <img ngSrc="assets/white-logo.png" width="1024" height="1024" alt="SRDEJO" class="hero-logo" priority />
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="section section-tint" id="como-funciona">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>Cómo funciona</h2>
+        <p>Un proceso simple, pensado para negocios que no tienen equipo técnico propio.</p>
+      </div>
+      <div class="grid grid-4">
+        @for (paso of pasos; track paso.numero) {
+          <div class="card">
+            <div class="step-number">{{ paso.numero }}</div>
+            <h3>{{ paso.titulo }}</h3>
+            <p>{{ paso.texto }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUCIONES -->
+  <section class="section" id="soluciones">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>Soluciones por sector</h2>
+        <p>Empezamos con un producto real y seguimos construyendo para más sectores.</p>
+      </div>
+
+      <div class="feature-block">
+        <span class="badge badge-live">Ya en uso</span>
+        <h3>Catálogos para distribuidoras</h3>
+        <p>
+          Una distribuidora toma el catálogo de sus proveedores y arma su propio catálogo, con su imagen
+          corporativa, listo para compartir con sus clientes.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        @for (sector of sectores; track sector.nombre) {
+          <div class="card">
+            <span class="badge badge-soon">Próximamente</span>
+            <h3>{{ sector.nombre }}</h3>
+            <p>{{ sector.texto }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE SRDEJO -->
+  <section class="section section-tint">
+    <div class="section-inner why-grid">
+      <div>
+        <h2>¿Por qué SRDEJO?</h2>
+        <p class="why-text">
+          Uso IA como motor de desarrollo para construir software especializado más rápido &mdash; y paso ese ahorro
+          a negocios pequeños que normalmente no podrían pagar un desarrollo a medida.
+        </p>
+      </div>
+      <div class="grid grid-2">
+        @for (v of ventajas; track v.titulo) {
+          <div class="card card-compact">
+            <h3>{{ v.titulo }}</h3>
+            <p>{{ v.texto }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO -->
+  <section class="section" id="portafolio">
+    <div class="section-inner">
+      <div class="portfolio-block">
+        <div>
+          <h2>Respaldado por experiencia real en desarrollo</h2>
+          <p>
+            SRDEJO está construido por Daniel Jiménez, ingeniero backend senior con más de 7 años de experiencia en
+            sistemas fintech y de pagos. Conoce su portafolio profesional.
+          </p>
+          <a [href]="portafolioUrl" target="_blank" rel="noopener" class="btn btn-accent">
+            Ver portafolio profesional →
+          </a>
+        </div>
+        <div class="portfolio-avatar-wrap">
+          <img
+            [ngSrc]="avatarUrl"
+            width="220"
+            height="220"
+            alt="Foto de Daniel Jiménez"
+            class="portfolio-avatar"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="section section-tint" id="precios">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>Cómo trabajamos el precio</h2>
+        <p>Sin planes rígidos: cada negocio es distinto, así que empezamos entendiendo el tuyo.</p>
+      </div>
+      <div class="grid grid-3">
+        @for (e of etapasPrecio; track e.paso) {
+          <div class="card card-price">
+            <div class="price-step">{{ e.paso }}</div>
+            <h3>{{ e.titulo }}</h3>
+            <p>{{ e.texto }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final" id="contacto">
+    <h2>Cuéntanos qué necesita tu negocio</h2>
+    <p>Una conversación de 20 minutos para entender tu proceso y ver si podemos ayudarte.</p>
+    <div class="cta-row cta-row-center">
+      <a href="#" class="btn btn-primary">Agendar una llamada</a>
+      <a [href]="whatsappUrl" target="_blank" rel="noopener" class="btn btn-secondary">Escríbenos por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img ngSrc="assets/white-logo.png" width="38" height="38" alt="SRDEJO" class="logo-img logo-footer" />
+    <p>© 2026 srdejo.com.co</p>
+  </footer>
+
+</div>
