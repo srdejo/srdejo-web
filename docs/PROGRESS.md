@@ -11,3 +11,9 @@ Portfolio (`projects/portfolio`) migrado de HTML/CSS/JS vanilla a Angular en est
 1. Revisar visualmente el portfolio con `ng serve portfolio` (las 3 rutas, dark/light, modal de "experiencia significativa", ambos formularios).
 2. Si todo se ve bien, confirmar con el usuario y hacer commit/push desde `srdejo-web/srdejo.github.io/`.
 3. Por separado: decidir y ejecutar el despliegue a producción de la landing `srdejo-web` (Etapa 2 de `docs/ROADMAP.md`).
+
+## Bloqueos o problemas conocidos
+
+_Convención: prefijar cada bloqueo con `[definición]` (el roadmap no da criterio de aceptación claro) o `[externo]` (credenciales, infraestructura, dependencia de otro equipo) para distinguir el origen._
+
+Ninguno registrado en esta revisión.

@@ -46,3 +46,4 @@ El commit/push desde `srdejo.github.io/` se hace manualmente (o con confirmació
 - Cambios de copy o de secciones: verificar que el build (`ng build` / `ng build portfolio`) sigue generando el prerender correctamente antes de darlo por terminado.
 - Cambios al portfolio: no se consideran publicados hasta correr `npm run publish:portfolio` y confirmar el commit/push en `srdejo.github.io/` con el usuario.
 - Actualizar `docs/PROGRESS.md` al cerrar una tarea del roadmap.
+- Si un ítem del roadmap no tiene criterio de aceptación claro, no lo ejecutes a ciegas — regístralo como bloqueo de definición en `docs/PROGRESS.md` y pregunta al usuario en vez de asumir el alcance.
