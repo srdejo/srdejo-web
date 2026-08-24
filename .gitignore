@@ -6,6 +6,9 @@
 /out-tsc
 /bazel-out
 
+# Repo anidado con .git propio (srdejo.github.io) — publicado por separado, ver docs/ARCHITECTURE.md
+/srdejo.github.io
+
 # Node
 /node_modules
 npm-debug.log

@@ -1,0 +1,51 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3f6650"/>
+      <stop offset="55%" stop-color="#2d4a39"/>
+      <stop offset="100%" stop-color="#1a2e22"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1160" cy="-60" r="310" fill="rgba(255,255,255,0.045)"/>
+  <circle cx="-70" cy="690" r="280" fill="rgba(255,255,255,0.035)"/>
+  <circle cx="1080" cy="590" r="200" fill="rgba(200,155,60,0.055)"/>
+
+  <!-- Left gold accent bar -->
+  <rect x="0" y="0" width="7" height="630" fill="#c89b3c" opacity="0.8"/>
+
+  <!-- App icon rounded square -->
+  <rect x="80" y="175" width="170" height="170" rx="38" fill="#f3f0e7" opacity="0.97"/>
+
+  <!-- Wallet icon (100x100 viewBox scaled ×1.7, translated to sit inside 170×170 box at 80,175) -->
+  <g transform="translate(80,175) scale(1.7)">
+    <path d="M33 26 L60 18 a4 4 0 0 1 5 3 l3 13 -38 0 Z" fill="#c89b3c"/>
+    <path d="M27 31 L57 23 a3 3 0 0 1 4 2 l2 11 -36 0 Z" fill="#b9cbb2"/>
+    <rect x="20" y="33" width="58" height="45" rx="12" fill="#2d4a39"/>
+    <rect x="58" y="47" width="24" height="16" rx="8" fill="#f3f0e7"/>
+    <circle cx="70" cy="55" r="3" fill="#2d4a39"/>
+    <path d="M37 71 L37 55" stroke="#9db89a" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M37 60 C30 60 26 54 28 49 C34 50 39 54 37 60 Z" fill="#b9cbb2"/>
+    <path d="M37 57 C44 57 49 51 47 46 C40 47 36 52 37 57 Z" fill="#8aa583"/>
+  </g>
+
+  <!-- App name -->
+  <text x="295" y="278" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="108" fill="#ffffff" letter-spacing="-3">Steward</text>
+
+  <!-- Gold rule -->
+  <rect x="295" y="302" width="140" height="3" rx="2" fill="#c89b3c"/>
+
+  <!-- Page label -->
+  <text x="295" y="366" font-family="Arial,Helvetica,sans-serif" font-weight="600" font-size="26" fill="#84a07b" letter-spacing="6">PRIVACY POLICY</text>
+
+  <!-- Tagline -->
+  <text x="295" y="428" font-family="Arial,Helvetica,sans-serif" font-weight="400" font-size="26" fill="rgba(194,210,182,0.82)">Mayordomía que transforma</text>
+
+  <!-- Bottom strip -->
+  <rect x="0" y="574" width="1200" height="56" fill="rgba(0,0,0,0.22)"/>
+  <text x="80" y="612" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="rgba(255,255,255,0.48)" letter-spacing="0.5">srdejo.github.io/steward-privacy</text>
+</svg>

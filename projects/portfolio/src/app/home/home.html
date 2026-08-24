@@ -1,0 +1,343 @@
+<div class="page" id="inicio" data-section-id="inicio">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#inicio" class="nav-brand" (click)="smoothScroll($event, 'inicio')">Daniel Jiménez</a>
+    <div class="nav-links">
+      <a href="#inicio" class="nav-link active" data-section="inicio" (click)="smoothScroll($event, 'inicio')">Inicio</a>
+      <a href="#sobre-mi" class="nav-link" data-section="sobre-mi" (click)="smoothScroll($event, 'sobre-mi')">Sobre mí</a>
+      <a href="#experiencia" class="nav-link" data-section="experiencia" (click)="smoothScroll($event, 'experiencia')">Experiencia</a>
+      <a href="#habilidades" class="nav-link" data-section="habilidades" (click)="smoothScroll($event, 'habilidades')">Habilidades</a>
+      <a href="#proyectos" class="nav-link" data-section="proyectos" (click)="smoothScroll($event, 'proyectos')">Proyectos</a>
+      <a href="#formacion" class="nav-link" data-section="formacion" (click)="smoothScroll($event, 'formacion')">Formación</a>
+      <a href="#contacto" class="nav-link" data-section="contacto" (click)="smoothScroll($event, 'contacto')">Contacto</a>
+      <a routerLink="/preguntas-frecuentes" class="nav-link">Preguntas</a>
+    </div>
+    <app-theme-toggle></app-theme-toggle>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" data-section-id="inicio">
+    <div class="hero-content">
+      <div class="hero-kicker"><span class="dot"></span>SENIOR BACKEND ENGINEER</div>
+      <h1>Daniel Eduardo<br>Jiménez Ovallos</h1>
+      <p class="hero-desc">Más de 7 años construyendo software backend con Java, Spring Boot, microservicios y AWS. La mayor parte de mi experiencia ha sido en el sector financiero — pagos, recaudos, banca y tarjetas de crédito — pero mi trabajo se adapta a cualquier dominio.</p>
+      <div class="hero-tags">
+        <span>Cloud &amp; Solution Architecture</span><span class="sep">|</span>
+        <span>Java</span><span class="sep">|</span>
+        <span>AWS</span><span class="sep">|</span>
+        <span>Microservicios</span>
+      </div>
+      <div class="hero-actions">
+        <a [href]="resumeUrl" target="_blank" class="btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0A2233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>
+          Descargar CV
+        </a>
+        <a href="#contacto" class="btn-outline" (click)="smoothScroll($event, 'contacto')">Escríbeme</a>
+        <a [href]="whatsappUrl" target="_blank" class="btn-circle" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.42 1.27 4.86L2 22l5.36-1.4a9.9 9.9 0 0 0 4.68 1.19h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.13-2.9-7-1.87-1.87-4.35-2.9-7.01-2.9zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.25-4.36c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.17 8.17 0 0 1 2.41 5.83c0 4.55-3.7 8.21-8.24 8.21zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.47-1.37-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.41 1.02 2.58.12.17 1.74 2.67 4.24 3.73.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28z"></path></svg>
+        </a>
+      </div>
+    </div>
+    <img src="assets/landing/perfil-avatar-v3.jpg" alt="Daniel Jiménez" class="hero-photo">
+  </header>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" data-section-id="sobre-mi" appReveal class="section section-narrow">
+    <div class="section-eyebrow"><span class="line"></span><h2>SOBRE MÍ</h2></div>
+    <p class="about-lead">Soy ingeniero de sistemas con especialización en auditoría de sistemas, y llevo más de 7 años construyendo software para el sector financiero. Me especializo en Java, Spring Boot, microservicios, integración de APIs y soluciones en la nube sobre AWS.</p>
+    <p class="about-body">He trabajado en proyectos de pagos, recaudos, banca y tarjetas de crédito, y complemento mi día a día con Angular, TypeScript, PostgreSQL, Docker, Terraform, Git y SonarQube. Mi inglés está en nivel básico (A2) y actualmente estoy dando mis primeros pasos en Specification-Driven Development.</p>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia" data-section-id="experiencia" class="section section-alt">
+    <div class="section-narrow">
+      <div class="section-eyebrow"><span class="line"></span><h2>EXPERIENCIA PROFESIONAL</h2></div>
+
+      @for (exp of experiences; track exp.company) {
+        <div class="timeline-item" appReveal>
+          <div class="timeline-rail">
+            <div class="timeline-dot"></div>
+            @if (exp.hasLine) { <div class="timeline-line"></div> }
+          </div>
+          <div class="timeline-body">
+            <div class="card">
+              <div class="role-head">
+                <div>
+                  <div class="role-title">{{ exp.role }}</div>
+                  <div class="role-meta"><strong>{{ exp.company }}</strong> · {{ exp.companyDetail }}</div>
+                </div>
+                <div class="role-side">
+                  <span class="role-period">{{ exp.period }}</span>
+                  <span class="role-logo-badge" [class.on-dark]="exp.logoOnDark">
+                    <img [src]="exp.logo" [alt]="exp.company" class="role-logo">
+                  </span>
+                </div>
+              </div>
+              <ul class="role-bullets">
+                @for (bullet of exp.bullets; track bullet) {
+                  <li>{{ bullet }}</li>
+                }
+              </ul>
+              <button type="button" class="story-btn" (click)="openStory(exp)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.5c.6.5 1 1.2 1 2v.5h6v-.5c0-.8.4-1.5 1-2A6 6 0 0 0 12 2z"></path></svg>
+                Experiencia significativa
+              </button>
+            </div>
+          </div>
+        </div>
+      }
+
+      <div appReveal>
+        <h3 class="extras-title">Experiencia adicional</h3>
+        <div class="extras-grid">
+          @for (extra of extraExperiences; track extra.org) {
+            <div class="extra-card">
+              <div class="extra-org">{{ extra.org }}</div>
+              <div class="extra-role">{{ extra.role }}</div>
+              <div class="extra-desc">{{ extra.desc }}</div>
+              <button type="button" class="story-btn small" (click)="openStory(extra)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.5c.6.5 1 1.2 1 2v.5h6v-.5c0-.8.4-1.5 1-2A6 6 0 0 0 12 2z"></path></svg>
+                Experiencia significativa
+              </button>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades" data-section-id="habilidades" class="section">
+    <div class="section-wide">
+      <div class="section-eyebrow"><span class="line"></span><h2>HABILIDADES TÉCNICAS</h2></div>
+      <div class="skills-grid">
+        <div class="skill-card" appReveal>
+          <div class="skill-head">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1.5"></rect><rect x="3" y="13" width="18" height="7" rx="1.5"></rect></svg>
+            <div class="skill-title">Backend</div>
+          </div>
+          <div class="skill-list">Java (8, 11, 17, 21) · Spring Boot · Spring Security · REST · SOAP · Microservicios · EDA</div>
+        </div>
+        <div class="skill-card" appReveal>
+          <div class="skill-head">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+            <div class="skill-title">Frontend</div>
+          </div>
+          <div class="skill-list">Angular · TypeScript · HTML · CSS · JavaScript</div>
+        </div>
+        <div class="skill-card" appReveal>
+          <div class="skill-head">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg>
+            <div class="skill-title">Bases de Datos</div>
+          </div>
+          <div class="skill-list">PostgreSQL · Oracle · Cassandra · Redis</div>
+        </div>
+        <div class="skill-card" appReveal>
+          <div class="skill-head">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .4-9A7 7 0 0 0 4.3 12.5 3.5 3.5 0 0 0 6.5 19z"></path></svg>
+            <div class="skill-title">Cloud &amp; DevOps</div>
+          </div>
+          <div class="skill-list">AWS (ECS, EC2, SQS, Cognito, CloudWatch) · Terraform · Docker · Git · Artifactory</div>
+        </div>
+      </div>
+
+      <div class="subsection-title-row"><span class="line" style="width:30px;height:2px;background:var(--accent2);"></span><h3 style="margin:0;font-size:12.5px;font-weight:800;letter-spacing:2px;color:var(--accent2);">HERRAMIENTAS</h3></div>
+      <div class="skills-grid">
+        <div class="skill-card" appReveal>
+          <div class="skill-head">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            <div class="skill-title">Calidad de Código</div>
+          </div>
+          <div class="skill-list">JUnit · Mockito · SonarQube</div>
+        </div>
+        <div class="skill-card" appReveal>
+          <div class="skill-head">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L17 14a4 4 0 0 1-5.7 0L4 21l-1-1 7.3-7.3A4 4 0 0 1 10 7l2.7-2.7a4 4 0 0 1 2-1z"></path></svg>
+            <div class="skill-title">Herramientas de Desarrollo</div>
+          </div>
+          <div class="skill-list">IntelliJ IDEA · VS Code · DataGrip · Postman · Swagger · Jira · Confluence · Figma</div>
+        </div>
+        <div class="skill-card" appReveal>
+          <div class="skill-head">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path><circle cx="12" cy="12" r="3.2"></circle></svg>
+            <div class="skill-title">IA</div>
+          </div>
+          <div class="skill-list">Claude Code · Claude Design · Kiro</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" data-section-id="proyectos" class="section section-alt">
+    <div class="section-narrow">
+      <div class="section-eyebrow"><span class="line"></span><h2>PROYECTOS PERSONALES</h2></div>
+
+      <div class="project-card" appReveal>
+        <img src="assets/landing/steward-icon.png" alt="Steward" class="project-icon">
+        <div class="project-body">
+          <div class="project-name-row">
+            <div class="project-name">Steward</div>
+            <div class="project-subtitle">App iOS de finanzas personales</div>
+          </div>
+          <p class="project-desc">Construí esta app para presupuestar, controlar gastos, administrar créditos y calcular el diezmo — de punta a punta, aplicando Specification-Driven Development desde el diseño hasta el desarrollo.</p>
+          <div class="project-tags">
+            <span class="project-tag">React Native</span>
+            <span class="project-tag">iOS</span>
+            <span class="project-tag">Specification-Driven Development</span>
+            <span class="project-tag">Código abierto</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/srdejo/steward" target="_blank" class="project-link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.3.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.6 11.6 0 0 1 6.2 0c2.4-1.6 3.4-1.2 3.4-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"></path></svg>
+              github.com/srdejo/steward
+            </a>
+            <a href="https://apps.apple.com/us/app/steward/id6783429254" target="_blank" class="project-link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 1.5c.1 1.2-.4 2.4-1.1 3.3-.7.9-1.9 1.6-3 1.5-.1-1.2.4-2.4 1.1-3.2.8-.9 2-1.5 3-1.6zM20 17.2c-.4 1-.9 1.9-1.6 2.8-.9 1.2-1.9 2.6-3.3 2.6-1.3 0-1.7-.8-3.2-.8s-2 .8-3.2.8c-1.3.1-2.4-1.4-3.3-2.5-1.8-2.5-3.2-7.1-1.3-10.2 1-1.6 2.7-2.6 4.5-2.6 1.3 0 2.6.9 3.2.9.7 0 2.2-1.1 3.8-.9.6 0 2.5.3 3.7 2-.1.1-2.2 1.3-2.2 3.8 0 3 2.6 4 2.9 4.1z"></path></svg>
+              Descargar en App Store
+            </a>
+          </div>
+        </div>
+        <a href="https://apps.apple.com/us/app/steward/id6783429254" target="_blank" class="project-qr">
+          <img src="assets/landing/steward-appstore-qr.png" alt="QR descargar Steward en App Store">
+          <span>Escanea para descargar</span>
+        </a>
+      </div>
+
+      <div class="project-card" appReveal>
+        <img src="assets/landing/logo-catalog-studio-icon.png" alt="Catalog Studio" class="project-icon" style="background:#fff;padding:8px;">
+        <div class="project-body">
+          <div class="project-name-row">
+            <div class="project-name">Catalog Studio</div>
+            <div class="project-subtitle">App de escritorio Windows</div>
+          </div>
+          <p class="project-desc">Una app de escritorio que carga el catálogo de un proveedor, lee automáticamente todos los productos y me permite seleccionar y ajustar precios para generar el catálogo final que envío a mis clientes.</p>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Electron</span>
+            <span class="project-tag">Windows</span>
+            <span class="project-tag">Specification-Driven Development</span>
+          </div>
+          <a href="https://github.com/srdejo/catalog-studio" target="_blank" class="project-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.3.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.6 11.6 0 0 1 6.2 0c2.4-1.6 3.4-1.2 3.4-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"></path></svg>
+            github.com/srdejo/catalog-studio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMACION -->
+  <section id="formacion" data-section-id="formacion" class="section">
+    <div class="section-wide formacion-grid">
+      <div>
+        <div class="section-eyebrow"><span class="line"></span><h2>FORMACIÓN</h2></div>
+        <div class="formacion-list" appReveal>
+          <div class="formacion-item">
+            <div class="formacion-bullet"></div>
+            <div>
+              <div class="formacion-title">Especialización en Auditoría de Sistemas</div>
+              <div class="formacion-school">Universidad Francisco de Paula Santander Ocaña (UFPSO)</div>
+              <div class="formacion-year">2017</div>
+            </div>
+          </div>
+          <div class="formacion-item">
+            <div class="formacion-bullet"></div>
+            <div>
+              <div class="formacion-title">Ingeniería de Sistemas</div>
+              <div class="formacion-school">Universidad Francisco de Paula Santander Ocaña (UFPSO)</div>
+              <div class="formacion-year">2015</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" appReveal>
+          <div class="lang-head">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"></path></svg>
+            <span>Idiomas</span>
+          </div>
+          <div class="lang-level">Inglés: Básico (A2)</div>
+          <div class="lang-detail">Duolingo English Test · 59 pts (jun. 2026)</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-eyebrow"><span class="line"></span><h2>CERTIFICACIONES</h2></div>
+        <div appReveal>
+          <div class="cert-head">
+            <img src="assets/landing/dl-platzi.png" alt="Platzi" width="15" height="15">
+            <span>Platzi</span>
+          </div>
+          <ul class="cert-list">
+            @for (cert of certifications; track cert) {
+              <li>{{ cert }}</li>
+            }
+          </ul>
+          <div class="cert-note">(Entre otros cursos relevantes)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="learning-block">
+      <div class="section-eyebrow"><span class="line"></span><h2>EN CONSTANTE APRENDIZAJE</h2></div>
+      <div class="learning-grid">
+        <div>· Nuevas metodologías: Spec Driven Development, Domain-Driven Design (DDD)</div>
+        <div>· Nuevas técnicas de desarrollo apoyadas en IA</div>
+        <div>· Buenas prácticas de Clean Code y principios SOLID</div>
+        <div>· Arquitecturas orientadas a eventos (EDA) y patrones de diseño de software</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <footer id="contacto" data-section-id="contacto" class="footer">
+    <div class="footer-inner">
+      <h2>¿Hablamos?</h2>
+      <p class="footer-lead">Estoy abierto a nuevas oportunidades en backend, arquitectura de software y proyectos cloud. Escríbeme por el canal que prefieras.</p>
+      <div class="footer-actions">
+        <a [href]="resumeUrl" target="_blank" class="btn-primary">Descargar CV (PDF)</a>
+        <a [href]="whatsappUrl" target="_blank" class="btn-outline">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/srdejo" target="_blank" class="btn-outline">LinkedIn</a>
+      </div>
+
+      <div class="contact-box">
+        <div class="contact-box-title">ESCRÍBEME POR CORREO</div>
+
+        <div class="contact-success" [hidden]="!contactSent">
+          <div class="contact-success-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3EC6E0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6"></path></svg>
+          </div>
+          <div class="contact-success-title">¡Mensaje enviado!</div>
+          <div class="contact-success-text">Gracias por escribir, {{ contactSuccessName }}. Te responderé lo antes posible.</div>
+          <button type="button" class="contact-reset" (click)="resetContact(contactForm)">Enviar otro mensaje</button>
+        </div>
+
+        <form class="contact-form" [class.is-loading]="contactSubmitting" [hidden]="contactSent" #contactForm (ngSubmit)="submitContact(contactForm)">
+            <div class="contact-field">
+              <label for="contact-name">Tu nombre <span class="required">*</span></label>
+              <input type="text" id="contact-name" name="name" placeholder="¿Cómo te llamas?" required>
+            </div>
+            <div class="contact-field">
+              <label for="contact-email">Tu correo <span class="required">*</span></label>
+              <input type="email" id="contact-email" name="email" placeholder="tucorreo@ejemplo.com" required>
+            </div>
+            <div class="contact-field">
+              <label for="contact-message">Mensaje <span class="required">*</span></label>
+              <textarea id="contact-message" name="message" placeholder="¿En qué te puedo ayudar?" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="contact-submit" [disabled]="contactSubmitting">{{ contactSubmitting ? 'Enviando…' : 'Enviar correo' }}</button>
+            <div class="contact-feedback" [style.color]="'#E0776B'">{{ contactError }}</div>
+        </form>
+      </div>
+
+      <div class="footer-meta">
+        <span>Ocaña, Norte de Santander · Colombia</span>
+        <span>312 765 5754</span>
+        <span>Daniel Eduardo Jiménez Ovallos</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<app-story-modal></app-story-modal>

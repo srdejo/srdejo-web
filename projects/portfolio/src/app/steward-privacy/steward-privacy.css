@@ -1,0 +1,93 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  font-family: 'Work Sans', sans-serif;
+  background: #e7e4da;
+  -webkit-font-smoothing: antialiased;
+  color: #2a3326;
+}
+
+a { color: #3f6650; text-decoration: underline; text-decoration-color: rgba(63, 102, 80, 0.35); }
+a:hover { text-decoration-color: #3f6650; }
+
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
+.header-strip {
+  width: 100%;
+  background: linear-gradient(165deg, #3f6650 0%, #2d4a39 55%, #23382b 100%);
+  display: flex;
+  justify-content: center;
+  padding: 28px 24px 32px;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #f3f0e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  box-shadow: 0 4px 12px rgba(13, 30, 18, 0.35);
+}
+
+.brand-name { font: 700 22px/1 'Lora', serif; color: #fff; }
+.brand-tag { font: 500 12px/1 'Work Sans'; color: #c2d2b6; margin-top: 5px; }
+
+.card {
+  width: calc(100% - 40px);
+  max-width: 600px;
+  background: #fbfaf4;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 8px 32px rgba(38, 57, 46, 0.12);
+  padding: 40px 40px 48px;
+}
+
+.eyebrow {
+  font: 600 11px/1 'Work Sans';
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #84a07b;
+  margin-bottom: 14px;
+}
+
+h1 { font: 700 30px/1.15 'Lora', serif; color: #26392e; margin: 0 0 32px; }
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font: 400 15px/1.75 'Work Sans';
+  color: #4a5e44;
+}
+
+.body p { margin: 0; }
+
+.meta {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid #e3ddcc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.meta span:first-child { font: 500 12px/1 'Work Sans'; color: #9a9c8f; }
+.meta span:last-child { font: 500 12px/1 'Work Sans'; color: #c89b3c; }

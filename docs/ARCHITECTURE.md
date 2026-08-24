@@ -4,31 +4,60 @@ Estado real de la arquitectura de `srdejo-web`. No aspiracional.
 
 ## Visión general
 
-Landing de una sola página, sin backend ni estado de aplicación. Un componente standalone (`Landing`) con todo su contenido tipado en el propio archivo.
+Workspace Angular multi-proyecto con dos aplicaciones independientes, sin backend ni estado de servidor compartido:
 
 ```
-src/app/
-├── app.ts                    ← shell, monta la ruta activa
-├── app.routes.server.ts      ← toda ruta ("**") se prerenderiza
+src/app/                        ← proyecto raíz "srdejo-web" (landing de servicios)
+├── app.ts
+├── app.routes.server.ts        ← toda ruta ("**") se prerenderiza
 └── landing/
-    ├── landing.ts             ← datos de la landing (pasos, sectores, ventajas, precio)
+    ├── landing.ts               ← datos de la landing (pasos, sectores, ventajas, precio)
     ├── landing.html
     └── landing.css
+
+projects/portfolio/src/app/     ← proyecto "portfolio" (portafolio personal)
+├── app.ts                       ← inicializa ThemeService, <router-outlet>
+├── app.routes.ts                ← '', 'preguntas-frecuentes', 'steward-privacy'
+├── app.routes.server.ts         ← toda ruta se prerenderiza
+├── theme.service.ts             ← dark/light, signal + localStorage
+├── contact-api.service.ts       ← POST a micasachurch.co/contact (compartido home/faq)
+├── story.service.ts             ← estado del modal "experiencia significativa"
+├── reveal.directive.ts          ← animación reveal-on-scroll (IntersectionObserver)
+├── theme-toggle/, story-modal/  ← componentes compartidos entre home y faq
+├── home/                        ← página principal (hero, experiencia, skills, proyectos, contacto)
+├── faq/                         ← /preguntas-frecuentes
+└── steward-privacy/             ← /steward-privacy (mini-sitio con su propio diseño)
 ```
 
 ## Renderizado
 
-`RenderMode.Prerender` en `app.routes.server.ts` — todo el sitio se genera como HTML estático en build time (`ng build`), sin servidor Node corriendo en producción para servir requests. `src/server.ts` existe (scaffold de Angular SSR con Express) pero no se usa en el despliegue actual — se sirve el `dist/srdejo-web/browser` directo desde nginx.
+`RenderMode.Prerender` en ambos `app.routes.server.ts` — cada sitio se genera como HTML estático en build time, sin servidor Node corriendo en producción. `src/server.ts` / `projects/portfolio/src/server.ts` existen (scaffold de Angular SSR con Express) pero no se usan en el despliegue actual — se sirve `dist/<proyecto>/browser` directo desde nginx.
 
 ## Contenido
 
-Todo el copy de la landing vive como arrays tipados en `landing.ts` (`pasos`, `sectores`, `ventajas`, `etapasPrecio`) — no hay CMS ni fuente de datos externa. Cambiar el contenido significa editar ese archivo y regenerar el build.
+- `srdejo-web`: copy de la landing en `landing.ts` (`pasos`, `sectores`, `ventajas`, `etapasPrecio`).
+- `portfolio`: copy en `home/home.data.ts` (experiencia profesional, extras) y `faq/faq.data.ts` (categorías de preguntas frecuentes). Skills, proyectos personales y formación quedan hardcodeados directo en `home.html` — son bloques únicos, no listas que se repitan con la misma forma.
+
+Sin CMS ni fuente de datos externa en ninguno de los dos proyectos — cambiar contenido es editar el archivo de datos y regenerar el build correspondiente.
+
+## Publicación del portfolio a `srdejo.github.io`
+
+El proyecto `portfolio` no se despliega directo — se exporta a un repo anidado con `.git` propio:
+
+```
+srdejo-web/srdejo.github.io/    ← checkout de git@github.com:srdejo/srdejo.github.io.git
+                                    (en .gitignore de srdejo-web, tratado como carpeta opaca)
+```
+
+Flujo: `npm run build:portfolio` (genera `dist/portfolio/browser/`) → `npm run publish:portfolio` (`scripts/publish-portfolio.mjs` copia ese `browser/` hacia `srdejo.github.io/`, borrando el contenido previo salvo `.git`/`.kiro`) → commit/push manual desde `srdejo.github.io/`. El script nunca hace commit ni push por su cuenta.
+
+Contenido migrado desde el HTML/CSS/JS vanilla original: se descartó `payment-simulator.js` (código muerto, no enlazado desde ningún HTML) y las entradas de `robots.txt`/`sitemap.xml` que apuntaban a páginas inexistentes (`payment-simulator-pro.html`, `payment-system-simulator.html`). `steward-privacy` se migró como ruta Angular propia, con sus propios estilos encapsulados (no comparte diseño con el resto del portfolio). Detalle en `docs/DECISIONS.md`.
 
 ## Integraciones externas
 
-- **WhatsApp**: link directo `wa.me` con mensaje pre-armado (`landing.ts`, `whatsappUrl`).
-- **Portafolio**: link a `https://srdejo.github.io/`, y el avatar se sirve desde ahí (`https://srdejo.github.io/assets/landing/perfil-avatar-v3.png`) — no está duplicado en este repo.
+- **WhatsApp**: link directo `wa.me` en ambos proyectos.
+- **Contacto**: `portfolio` reutiliza el endpoint `https://micasachurch.co/contact` (el mismo `contact-api` de `nolost`) para el formulario de contacto y el de sugerencia de preguntas — así funcionaba el sitio original, se preservó tal cual.
 
 ## Deploy
 
-Estático, sin proceso propio. Servido por nginx desde `dist/srdejo-web/browser`, mismo patrón que `hotel`/`distriapp`/`consulting`. En local: dominio `portfolio.test` (ver `infra/nginx/edge.conf` y `infra/README.md` en la raíz del workspace). Dominio de producción: ver `docs/DECISIONS.md`/`docs/PROGRESS.md` para el estado real si ya está desplegado.
+Estático, sin proceso propio, en ambos proyectos. Servidos por nginx desde `dist/<proyecto>/browser`, mismo patrón que `hotel`/`distriapp`/`consulting`. En local, `infra/nginx/edge.conf` sirve `srdejo-web` bajo el dominio `portfolio.test` (nombre heredado de antes de que existiera el proyecto `portfolio` — puede confundir, ver `docs/ROADMAP.md`). El proyecto `portfolio` se publica por separado a GitHub Pages vía el repo anidado, no a través de `infra/`.

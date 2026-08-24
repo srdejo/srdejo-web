@@ -1,0 +1,15 @@
+# Robots.txt para srdejo.github.io
+
+# Permitir a todos los buscadores
+User-agent: *
+Allow: /
+Allow: /assets/
+
+# Desallow de archivos específicos
+Disallow: /*.pdf$
+
+# Crawl delay (opcional, para evitar sobrecarga)
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://srdejo.github.io/sitemap.xml

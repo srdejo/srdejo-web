@@ -1,0 +1,84 @@
+<div class="page">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a routerLink="/" class="faq-back">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+      Daniel Jiménez
+    </a>
+    <app-theme-toggle></app-theme-toggle>
+  </nav>
+
+  <!-- HERO -->
+  <header class="faq-hero">
+    <div class="section-eyebrow"><span class="line"></span><span style="font-size:12.5px;font-weight:800;letter-spacing:2px;color:var(--accent2);">ENTREVISTAS TÉCNICAS</span></div>
+    <h1>Preguntas frecuentes en entrevistas</h1>
+    <p>Conceptos técnicos que suelo repasar antes de una entrevista, explicados de forma sencilla y con ejemplos. La mayoría son de ingeniería de software en general; los de colecciones son específicos de Java, mi lenguaje principal.</p>
+  </header>
+
+  <!-- FAQ -->
+  <section class="section section-narrow">
+
+    @for (category of categories; track category.title) {
+      <div class="faq-category">
+        <h3 class="faq-category-title">{{ category.title }}</h3>
+        <div class="faq-card">
+          @for (item of category.items; track item.question) {
+            <div class="faq-item" [class.is-open]="isOpen(category.title + '|' + item.question)">
+              <button type="button" class="faq-question" (click)="toggle(category.title + '|' + item.question)">
+                <span>{{ item.question }}</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+              </button>
+              <div class="faq-answer">
+                @if (item.intro) {
+                  <p class="faq-intro">{{ item.intro }}</p>
+                }
+                @for (point of item.points; track point.text) {
+                  <div class="faq-point">
+                    @if (point.label) { <strong>{{ point.label }}</strong> }
+                    <span>{{ point.text }}</span>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    <div class="faq-suggest">
+      <div class="section-eyebrow"><span class="line"></span><h3 style="margin:0;font-size:12.5px;font-weight:800;letter-spacing:2px;color:var(--accent2);">¿TE HAN HECHO OTRA PREGUNTA?</h3></div>
+      <p class="faq-suggest-lead">Cuéntame una pregunta que te hayan hecho en una entrevista y la respuesta correcta — te la puedo agregar a esta lista.</p>
+
+      <div class="faq-suggest-success" [hidden]="!suggestSent">
+        <div class="faq-suggest-success-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3EC6E0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6"></path></svg>
+        </div>
+        <div class="faq-suggest-success-title">¡Gracias por el aporte!</div>
+        <div class="faq-suggest-success-text">La revisaré y la agregaré a la lista.</div>
+        <button type="button" class="faq-suggest-reset" (click)="resetSuggestion(suggestForm)">Enviar otra</button>
+      </div>
+
+      <form class="faq-suggest-form" [hidden]="suggestSent" #suggestForm (ngSubmit)="submitSuggestion(suggestForm)">
+          <div class="faq-suggest-field">
+            <label for="suggest-question">Pregunta que te hicieron <span class="required">*</span></label>
+            <textarea id="suggest-question" name="question" placeholder="Ej: ¿Cómo manejarías la idempotencia en un servicio de pagos?" rows="2" required></textarea>
+          </div>
+          <div class="faq-suggest-field">
+            <label for="suggest-answer">Respuesta correcta <span class="required">*</span></label>
+            <textarea id="suggest-answer" name="answer" placeholder="Escribe la respuesta con la que te habría ido mejor" rows="4" required></textarea>
+          </div>
+          <div>
+            <button type="submit" class="faq-suggest-submit" [disabled]="suggestSubmitting">{{ suggestSubmitting ? 'Enviando…' : 'Enviar pregunta' }}</button>
+            <div class="faq-suggest-feedback">{{ suggestError }}</div>
+          </div>
+        </form>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="faq-footer">
+    <a routerLink="/">← Volver al perfil de Daniel Jiménez</a>
+  </footer>
+</div>
