@@ -23,8 +23,9 @@ if (!existsSync(join(target, '.git'))) {
 
 // Limpia el contenido actual del repo destino, preservando lo que no es parte del build
 // publicado: .git, .kiro (steering local, gitignored), y la documentación de gobernanza
-// (CLAUDE.md/docs/) que vive en este repo pero no la genera `ng build`.
-const preserved = new Set(['.git', '.kiro', 'CLAUDE.md', 'docs']);
+// (CLAUDE.md/docs/) que vive en este repo pero no la genera `ng build`. También se
+// preservan .gitignore y .vscode/, que son del repo destino y no del build.
+const preserved = new Set(['.git', '.gitignore', '.vscode', '.kiro', 'CLAUDE.md', 'docs']);
 for (const entry of readdirSync(target)) {
   if (preserved.has(entry)) continue;
   rmSync(join(target, entry), { recursive: true, force: true });

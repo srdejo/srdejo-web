@@ -10,8 +10,8 @@
       <a href="#habilidades" class="nav-link" data-section="habilidades" (click)="smoothScroll($event, 'habilidades')">Habilidades</a>
       <a href="#proyectos" class="nav-link" data-section="proyectos" (click)="smoothScroll($event, 'proyectos')">Proyectos</a>
       <a href="#formacion" class="nav-link" data-section="formacion" (click)="smoothScroll($event, 'formacion')">Formación</a>
-      <a href="#contacto" class="nav-link" data-section="contacto" (click)="smoothScroll($event, 'contacto')">Contacto</a>
       <a routerLink="/preguntas-frecuentes" class="nav-link">Preguntas</a>
+      <a href="#contacto" class="nav-link" data-section="contacto" (click)="smoothScroll($event, 'contacto')">Contacto</a>
     </div>
     <app-theme-toggle></app-theme-toggle>
   </nav>
@@ -19,14 +19,14 @@
   <!-- HERO -->
   <header class="hero" data-section-id="inicio">
     <div class="hero-content">
-      <div class="hero-kicker"><span class="dot"></span>SENIOR BACKEND ENGINEER</div>
+      <div class="hero-kicker"><span class="dot"></span>ARQUITECTO DE SOFTWARE</div>
       <h1>Daniel Eduardo<br>Jiménez Ovallos</h1>
-      <p class="hero-desc">Más de 7 años construyendo software backend con Java, Spring Boot, microservicios y AWS. La mayor parte de mi experiencia ha sido en el sector financiero — pagos, recaudos, banca y tarjetas de crédito — pero mi trabajo se adapta a cualquier dominio.</p>
+      <p class="hero-desc">Más de 12 años en tecnología y más de 3 años liderando la arquitectura de soluciones en producción en banca y fintech. Diseño microservicios, monolitos modulares y sistemas orientados a eventos en Java/Spring Boot sobre AWS, con arquitectura limpia y hexagonal.</p>
       <div class="hero-tags">
-        <span>Cloud &amp; Solution Architecture</span><span class="sep">|</span>
+        <span>Diseño de APIs y Microservicios</span><span class="sep">|</span>
+        <span>Seguridad y Autenticación</span><span class="sep">|</span>
         <span>Java</span><span class="sep">|</span>
-        <span>AWS</span><span class="sep">|</span>
-        <span>Microservicios</span>
+        <span>AWS</span>
       </div>
       <div class="hero-actions">
         <a [href]="resumeUrl" target="_blank" class="btn-primary">
@@ -39,14 +39,14 @@
         </a>
       </div>
     </div>
-    <img src="assets/landing/perfil-avatar-v3.jpg" alt="Daniel Jiménez" class="hero-photo">
+    <img src="assets/landing/perfil-avatar-v3.jpg" alt="Daniel Eduardo Jiménez Ovallos, Arquitecto de Software" class="hero-photo" width="230" height="230" fetchpriority="high">
   </header>
 
   <!-- SOBRE MI -->
   <section id="sobre-mi" data-section-id="sobre-mi" appReveal class="section section-narrow">
     <div class="section-eyebrow"><span class="line"></span><h2>SOBRE MÍ</h2></div>
-    <p class="about-lead">Soy ingeniero de sistemas con especialización en auditoría de sistemas, y llevo más de 7 años construyendo software para el sector financiero. Me especializo en Java, Spring Boot, microservicios, integración de APIs y soluciones en la nube sobre AWS.</p>
-    <p class="about-body">He trabajado en proyectos de pagos, recaudos, banca y tarjetas de crédito, y complemento mi día a día con Angular, TypeScript, PostgreSQL, Docker, Terraform, Git y SonarQube. Mi inglés está en nivel básico (A2) y actualmente estoy dando mis primeros pasos en Specification-Driven Development.</p>
+    <p class="about-lead">Soy Ingeniero de Sistemas y Especialista en Auditoría de Sistemas, con más de 12 años en tecnología y más de 3 años liderando la arquitectura de soluciones en producción en banca y fintech.</p>
+    <p class="about-body">Diseño arquitecturas de microservicios, monolitos modulares y sistemas orientados a eventos en Java/Spring Boot sobre AWS, aplicando arquitectura limpia y hexagonal. Defino requisitos no funcionales de disponibilidad, escalabilidad y rendimiento, y diseño patrones de integración seguros con cores bancarios, proveedores externos y dispositivos transaccionales, respondiendo por los controles de seguridad (OAuth 2.0/OIDC, OWASP Top 10) y la calidad verificable del código.</p>
   </section>
 
   <!-- EXPERIENCIA -->
@@ -115,30 +115,30 @@
         <div class="skill-card" appReveal>
           <div class="skill-head">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1.5"></rect><rect x="3" y="13" width="18" height="7" rx="1.5"></rect></svg>
-            <div class="skill-title">Backend</div>
+            <div class="skill-title">Arquitectura e integraciones</div>
           </div>
-          <div class="skill-list">Java (8, 11, 17, 21) · Spring Boot · Spring Security · REST · SOAP · Microservicios · EDA</div>
+          <div class="skill-list">Microservicios · Monolito modular · EDA con AWS SQS · Arquitectura limpia, hexagonal y onion · Diseño de APIs REST y SOAP · Patrones de diseño · SOLID · DRY · YAGNI · Integración con cores bancarios, proveedores externos y dispositivos POS (ISO 8583)</div>
         </div>
         <div class="skill-card" appReveal>
           <div class="skill-head">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
-            <div class="skill-title">Frontend</div>
+            <div class="skill-title">Seguridad y autenticación</div>
           </div>
-          <div class="skill-list">Angular · TypeScript · HTML · CSS · JavaScript</div>
+          <div class="skill-list">Spring Security · OAuth 2.0 y OpenID Connect con AWS Cognito · OTP · Cifrado en integraciones con proveedores · OWASP Top 10 · Auditoría de sistemas · Controles sobre transacciones monetarias</div>
         </div>
         <div class="skill-card" appReveal>
           <div class="skill-head">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg>
-            <div class="skill-title">Bases de Datos</div>
+            <div class="skill-title">Plataforma y datos</div>
           </div>
-          <div class="skill-list">PostgreSQL · Oracle · Cassandra · Redis</div>
+          <div class="skill-list">Java (8, 11, 17, 21) · Spring Boot · PostgreSQL · Oracle · Cassandra · Redis · Angular · TypeScript</div>
         </div>
         <div class="skill-card" appReveal>
           <div class="skill-head">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .4-9A7 7 0 0 0 4.3 12.5 3.5 3.5 0 0 0 6.5 19z"></path></svg>
             <div class="skill-title">Cloud &amp; DevOps</div>
           </div>
-          <div class="skill-list">AWS (ECS, EC2, SQS, Cognito, CloudWatch) · Terraform · Docker · Git · Artifactory</div>
+          <div class="skill-list">AWS (ECS, EC2, SQS, Cognito, CloudWatch) · Terraform · Docker · Git · Artifactory · CI/CD</div>
         </div>
       </div>
 
@@ -149,7 +149,7 @@
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"></path><path d="M9 12l2 2 4-4"></path></svg>
             <div class="skill-title">Calidad de Código</div>
           </div>
-          <div class="skill-list">JUnit · Mockito · SonarQube</div>
+          <div class="skill-list">JUnit · Mockito · SonarQube · Clean Code · Scrum</div>
         </div>
         <div class="skill-card" appReveal>
           <div class="skill-head">
@@ -172,7 +172,7 @@
   <!-- PROYECTOS -->
   <section id="proyectos" data-section-id="proyectos" class="section section-alt">
     <div class="section-narrow">
-      <div class="section-eyebrow"><span class="line"></span><h2>PROYECTOS PERSONALES</h2></div>
+      <div class="section-eyebrow"><span class="line"></span><h2>PROYECTOS PROPIOS Y DESARROLLO ASISTIDO POR IA</h2></div>
 
       <div class="project-card" appReveal>
         <img src="assets/landing/steward-icon.png" alt="Steward" class="project-icon">
@@ -225,6 +225,23 @@
           </a>
         </div>
       </div>
+
+      <div class="project-card" appReveal>
+        <img src="assets/landing/logo-srdejo.png" alt="srdejo.com.co" class="project-icon" style="background:#fff;padding:2px;" width="58" height="58" loading="lazy">
+        <div class="project-body">
+          <div class="project-name-row">
+            <div class="project-name">srdejo.com.co</div>
+            <div class="project-subtitle">Software que simplifica tu negocio</div>
+          </div>
+          <p class="project-desc">Iniciativa propia de software bajo la que desarrollo mis productos. Llevo 10 proyectos en paralelo con Claude Code: defino las especificaciones y la arquitectura de cada uno y reviso el código generado antes de integrarlo.</p>
+          <div class="project-links">
+            <a href="https://srdejo.com.co/" target="_blank" rel="noopener" class="project-link">srdejo.com.co</a>
+            <a href="https://hotel.srdejo.com.co/" target="_blank" rel="noopener" class="project-link">hotel.srdejo.com.co</a>
+            <a href="https://consultores.srdejo.com.co/" target="_blank" rel="noopener" class="project-link">consultores.srdejo.com.co</a>
+            <a href="https://micasachurch.co/" target="_blank" rel="noopener" class="project-link">micasachurch.co</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -257,8 +274,8 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"></path></svg>
             <span>Idiomas</span>
           </div>
-          <div class="lang-level">Inglés: Básico (A2)</div>
-          <div class="lang-detail">Duolingo English Test · 59 pts (jun. 2026)</div>
+          <div class="lang-level">Español nativo · Inglés intermedio (B1)</div>
+          <div class="lang-detail">Duolingo English Test · 62 pts</div>
         </div>
       </div>
 
@@ -270,11 +287,18 @@
             <span>Platzi</span>
           </div>
           <ul class="cert-list">
-            @for (cert of certifications; track cert) {
-              <li>{{ cert }}</li>
+            @for (cert of certifications; track cert.name) {
+              <li>
+                <div class="cert-name">{{ cert.name }}</div>
+                <div class="cert-date">{{ cert.date }}</div>
+              </li>
             }
           </ul>
-          <div class="cert-note">(Entre otros cursos relevantes)</div>
+          <div class="cert-note">Además: Java Spring Security · Cloud Computing con AWS.</div>
+          <a href="https://platzi.com/p/srdejo90/" target="_blank" rel="noopener" class="cert-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5M10 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"></path></svg>
+            Ver todos mis cursos en Platzi
+          </a>
         </div>
       </div>
     </div>
@@ -283,9 +307,8 @@
       <div class="section-eyebrow"><span class="line"></span><h2>EN CONSTANTE APRENDIZAJE</h2></div>
       <div class="learning-grid">
         <div>· Nuevas metodologías: Spec Driven Development, Domain-Driven Design (DDD)</div>
-        <div>· Nuevas técnicas de desarrollo apoyadas en IA</div>
-        <div>· Buenas prácticas de Clean Code y principios SOLID</div>
-        <div>· Arquitecturas orientadas a eventos (EDA) y patrones de diseño de software</div>
+        <div>· Nuevas técnicas de desarrollo apoyadas en IA, uso de la IA en el diseño de arquitecturas</div>
+        <div>· Arquitecturas orientadas a eventos (EDA)</div>
       </div>
     </div>
   </section>
@@ -294,11 +317,12 @@
   <footer id="contacto" data-section-id="contacto" class="footer">
     <div class="footer-inner">
       <h2>¿Hablamos?</h2>
-      <p class="footer-lead">Estoy abierto a nuevas oportunidades en backend, arquitectura de software y proyectos cloud. Escríbeme por el canal que prefieras.</p>
+      <p class="footer-lead">Estoy abierto a nuevas oportunidades en arquitectura de software, plataformas backend y proyectos cloud. Escríbeme por el canal que prefieras.</p>
       <div class="footer-actions">
         <a [href]="resumeUrl" target="_blank" class="btn-primary">Descargar CV (PDF)</a>
         <a [href]="whatsappUrl" target="_blank" class="btn-outline">WhatsApp</a>
-        <a href="https://www.linkedin.com/in/srdejo" target="_blank" class="btn-outline">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/srdejo" target="_blank" rel="noopener" class="btn-outline">LinkedIn</a>
+        <a href="https://github.com/srdejo" target="_blank" rel="noopener" class="btn-outline">GitHub</a>
       </div>
 
       <div class="contact-box">
@@ -334,7 +358,7 @@
       <div class="footer-meta">
         <span>Ocaña, Norte de Santander · Colombia</span>
         <span>312 765 5754</span>
-        <span>Daniel Eduardo Jiménez Ovallos</span>
+        <span>srdejo&#64;gmail.com</span>
       </div>
     </div>
   </footer>
