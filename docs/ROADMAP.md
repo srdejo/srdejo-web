@@ -32,6 +32,11 @@ Estado: 🟡 landing y portfolio funcionales en desarrollo local, pendientes de 
 
 ## Etapa 4 — Primera publicación real del portfolio 🔴
 
+**Objetivo**: el portfolio Angular queda publicado en `https://srdejo.github.io/` y servido
+correctamente por GitHub Pages, con las 3 rutas revisadas antes de publicar. Los tres pasos
+dependen de Daniel (revisión visual, confirmar el push del repo anidado y verificar producción),
+no de una definición que falte — ver `BLOQUEANTES.md` en la raíz del workspace.
+
 - [ ] Revisar visualmente las 3 rutas con `ng serve portfolio` (dark/light, acordeón FAQ, modal de historia, formularios)
 - [ ] Correr `npm run publish:portfolio`, revisar el diff en `srdejo.github.io/` y confirmar el commit/push con el usuario
 - [ ] Verificar en producción (`https://srdejo.github.io/`) que GitHub Pages sirve el nuevo build correctamente
