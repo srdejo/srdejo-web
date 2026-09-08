@@ -37,3 +37,16 @@ Decisiones tomadas en este repo y por qué. No incluye decisiones triviales.
 **Decisión:** `payment-simulator.js` (código muerto en el sitio original, no enlazado desde ningún HTML) no se migró a Angular. Se limpiaron las entradas de `robots.txt`/`sitemap.xml` que apuntaban a `payment-simulator-pro.html`/`payment-system-simulator.html`, páginas que nunca existieron como archivos.
 
 **Por qué:** no aportaba valor real al portfolio y mantenerlo habría sido trabajo migrado sin uso — YAGNI. Si se quiere una demo interactiva de pagos en el futuro, se construye como una feature nueva, no reviviendo código muerto.
+
+## Los `git push` los hace Daniel, no el agente (2026-09-08)
+
+**Decisión:** las sesiones del agente trabajan en una rama `claude/<tema>-<fecha>` y hacen commit local, pero **no publican nada**. El `push` y el merge a `main` los hace Daniel desde su máquina. En el entorno del agente no se configuran credenciales de git: ni deploy key, ni token, ni llaves SSH.
+
+**Por qué:** el entorno del agente es efímero — cada sesión arranca con un `$HOME` limpio, así que cualquier credencial tendría que quedar en texto plano dentro de la carpeta del workspace para sobrevivir de un día para otro. Y el push manual conserva un punto de revisión humano: el diff se ve antes de que entre a GitHub. Automatizarlo ahorra ~30 segundos al día a cambio de un secreto en disco; el cambio no compensa.
+
+**Alternativas descartadas:**
+- **Deploy key por repo.** Son 10 repos y una deploy key sirve para uno solo (GitHub no permite reusar la misma llave en varios). Además **no se puede limitar a un patrón de ramas**: lo que limita por rama es un *ruleset* del repositorio, no el tipo de credencial.
+- **Token fino (fine-grained PAT)** con `Contents: Read and write` sobre los 10 repos. Sería la vía si algún día se automatiza —es más simple que 10 llaves— pero implica igualmente el token en disco, y exigiría proteger `main` con un ruleset para que el secreto no pueda escribir ahí.
+- **GitHub App.** Lo más correcto (tokens de vida corta, sin secreto persistente) y demasiado montaje para lo que se gana.
+
+**Consecuencia práctica:** que `git push` falle en el entorno del agente con `Host key verification failed` es el **comportamiento esperado**, no un problema por resolver ni un bloqueante que reportar. Cada sesión deja las ramas listas y los comandos de push en `RESUMEN-DIARIO.md`, en la raíz del workspace. Aplica a los 10 repos.
