@@ -7,6 +7,7 @@ Estado: 🟡 landing y portfolio funcionales en desarrollo local, pendientes de 
 - [x] Componente `landing` con secciones: pasos, sectores atendidos, ventajas, precio/proceso
 - [x] CTA a WhatsApp con mensaje pre-armado
 - [x] Link a portafolio (`srdejo.github.io`)
+- [x] Corregida la foto rota del hero de la landing — `avatarUrl` apuntaba a `perfil-avatar-v3.png` y el archivo publicado es `.jpg`, así que el `[ngSrc]` daba 404 y la landing salía sin foto. Encontrado y corregido 2026-09-08. **Verificado**: `ng build` en verde y las 6 referencias del bundle generado apuntan ya a `.jpg` (0 a `.png`).
 - [x] Prerender configurado (`RenderMode.Prerender`)
 - [x] Integrado a `infra/` local (`portfolio.test`, ver `infra/nginx/edge.conf`)
 
@@ -45,5 +46,5 @@ no de una definición que falte — ver `BLOQUEANTES.md` en la raíz del workspa
 
 - [ ] Formulario de contacto propio en la landing de `srdejo-web` en vez de solo WhatsApp, si se vuelve necesario
 - [ ] Analítica básica de visitas
-- [ ] Recomprimir `favicon.png` (1.15MB) y `perfil-avatar-v3.jpg` (2.79MB) del portfolio — quedaron migrados tal cual, sin optimizar
+- [x] Recomprimir `favicon.png` y `perfil-avatar-v3.jpg` del portfolio — hecho 2026-09-08. `favicon.png` pesaba **1.12 MB a 1254×1254** y se sirve como `icon` y `apple-touch-icon`, o sea que todo visitante bajaba 1.12 MB para un icono que nunca se dibuja a más de 180 px: se reescaló a **512×512** (el tamaño estándar máximo de icono de app, con margen para un icono PWA) y quedó en **150 KB, un 86.6% menos**. Sin cuantización de color ni recorte: solo reescalado Lanczos. `perfil-avatar-v3.jpg` ya no aplicaba — se reemplazó el 2026-09-07 con la landing nueva y hoy pesa 36 KB a 560×560. **Verificado**: la diferencia contra el original, renderizando ambos a los tamaños en que el navegador lo usa, es de máximo 5/255 por canal a 180 px y 1/255 a 32 px (imperceptible); `ng build portfolio --configuration production` en verde con las 3 rutas prerenderizadas y el `favicon.png` de 150 KB en `dist/`.
 - [ ] Resolver el nombre `portfolio.test` en `infra/nginx/edge.conf` — hoy apunta a `srdejo-web` (la landing), no al proyecto `portfolio`, lo cual puede confundir. Requiere tocar `infra/` compartida, coordinar antes de cambiar.

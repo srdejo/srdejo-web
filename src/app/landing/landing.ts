@@ -33,7 +33,7 @@ export class Landing {
   readonly whatsappUrl =
     'https://wa.me/573127655754?text=Hola%2C%20vi%20la%20landing%20de%20SRDEJO%20y%20quiero%20contactarte.';
   readonly portafolioUrl = 'https://srdejo.github.io/';
-  readonly avatarUrl = 'https://srdejo.github.io/assets/landing/perfil-avatar-v3.png';
+  readonly avatarUrl = 'https://srdejo.github.io/assets/landing/perfil-avatar-v3.jpg';
 
   readonly pasos: Paso[] = [
     {
