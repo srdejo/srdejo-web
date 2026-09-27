@@ -60,4 +60,4 @@ Contenido migrado desde el HTML/CSS/JS vanilla original: se descartó `payment-s
 
 ## Deploy
 
-Estático, sin proceso propio, en ambos proyectos. Servidos por nginx desde `dist/<proyecto>/browser`, mismo patrón que `hotel`/`distriapp`/`consulting`. En local, `infra/nginx/edge.conf` sirve `srdejo-web` bajo el dominio `portfolio.test` (nombre heredado de antes de que existiera el proyecto `portfolio` — puede confundir, ver `docs/ROADMAP.md`). El proyecto `portfolio` se publica por separado a GitHub Pages vía el repo anidado, no a través de `infra/`.
+Estático, sin proceso propio, en ambos proyectos. Servidos por nginx desde `dist/<proyecto>/browser`, mismo patrón que `hotel`/`distriapp`/`consulting`. En local, `infra/local-deploy.ps1 -Project srdejo-web` publica `srdejo-web` en `srdejo.test` y `portfolio` en `portfolio.test` (entorno Docker de `infra/`). El proyecto `portfolio` se publica por separado a GitHub Pages vía el repo anidado, no a través de `infra/`.

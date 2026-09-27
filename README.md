@@ -14,7 +14,7 @@ npm install
 ng serve
 ```
 
-Se levanta junto con el resto del workspace vía `infra/start.ps1` (raíz del workspace), servido estático como `portfolio.test`.
+Se publica en el entorno Docker local con `.\infra\local-deploy.ps1 -Project srdejo-web` (raíz del workspace): `srdejo-web` en `srdejo.test` y `portfolio` en `portfolio.test`.
 
 ## Build
 
