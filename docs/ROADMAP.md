@@ -2,6 +2,11 @@
 
 Estado: 🟡 landing y portfolio funcionales en desarrollo local, pendientes de publicar/desplegar.
 
+## Objetivo actual: Portfolio publicado
+
+**Criterio de cierre**: la landing y el portfolio están publicados en producción.
+**Alcance**: Etapa 2, Etapa 4
+
 ## Etapa 1 — Landing (`srdejo-web`) 🟢
 
 - [x] Componente `landing` con secciones: pasos, sectores atendidos, ventajas, precio/proceso
